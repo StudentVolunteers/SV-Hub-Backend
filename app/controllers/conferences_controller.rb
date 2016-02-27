@@ -5,12 +5,20 @@ class ConferencesController < ApplicationController
   # GET /conferences.json
   def index
     @conferences = Conference.all
-    render json: {conferences: @conferences}
+
+    respond_to do |format|
+      format.html { @conferences}
+      format.json { render json: {conferences: @conferences}}
+    end
   end
 
   # GET /conferences/1
   # GET /conferences/1.json
   def show
+    respond_to do |format|
+      format.html { @conference}
+      format.json { render json: {conference: @conference}}
+    end
   end
 
   # GET /conferences/new
