@@ -1,0 +1,1 @@
+rails g scaffold Conference name:string startDate:date endDate:date description:text location:string
