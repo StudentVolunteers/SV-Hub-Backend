@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
-  resources :conferences
+  resources :conferences#, defaults: {format: :json}
 
   root 'conferences#index'
 
